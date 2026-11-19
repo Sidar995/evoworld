@@ -1,0 +1,22 @@
+{
+    "name": "evoworld",
+    "version": "0.2.0",
+    "private": true,
+    "type": "module",
+    "description": "A deterministic artificial-life ecosystem for university Showcase Day",
+    "scripts": {
+        "start": "node --env-file-if-exists=.env server/index.js",
+        "test": "node --test tests/*.test.js",
+        "db:setup": "node --env-file-if-exists=.env server/setup-db.js",
+        "preview": "node server/preview.js",
+        "test:simulation": "node --test tests/simulation.test.js",
+        "test:core": "node --test tests/simulation.test.js tests/worker.test.js tests/validation.test.js tests/compatibility.test.js tests/archive.test.js tests/store.test.js tests/ui-helpers.test.js tests/ui.test.js tests/worker-transport.test.js"
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "pg": "^8.16.0"
+    },
+    "engines": {
+        "node": ">=22.9.0 <23"
+    }
+}

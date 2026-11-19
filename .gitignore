@@ -1,0 +1,29 @@
+# Public release allowlist: internal plans, conversation history and backups stay local.
+/*
+!/.gitignore
+!/.env.example
+!/package.json
+!/package-lock.json
+!/README.md
+!/render.yaml
+!/public/
+!/server/
+!/tests/
+
+# Never include local secrets, dependencies or generated/data exports.
+**/.env
+**/.env.*
+!/.env.example
+**/node_modules/
+**/*.log
+**/*.zip
+**/*.sql
+**/*.dump
+**/*.bak
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/logbook.md
+**/.DS_Store
+**/Thumbs.db

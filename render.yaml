@@ -1,0 +1,23 @@
+# Blueprint only. Review free plan and private secrets before account creation.
+services:
+  - type: web
+    name: evoworld
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeployTrigger: 'off'
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: AUTH_MODE
+        value: owner
+      - key: PUBLIC_ORIGIN
+        sync: false
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: DATABASE_URL
+        sync: false
